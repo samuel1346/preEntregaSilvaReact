@@ -1,0 +1,42 @@
+.navBar{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(180, 180, 179);
+    transition: 300ms;
+  }
+  .navBar:hover{
+    background-color: rgb(91, 110, 103);
+  }
+  .navBarUl{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0px 5px 0px;
+  }
+  .navBarUl li{
+    margin:  0px 15px 0px 0px;
+    padding:  0px 5px 0px 5px;
+  }
+  .burgerBtn{
+    color: rgb(26, 25, 25, 0);
+    z-index: -1;
+  }
+
+a{
+    transition: 300ms ease;
+}
+a:hover{
+    font-size: larger;
+}
+  
+  @media(width<620px){
+    .burgerBtn{
+      z-index: auto;
+    }
+    .navBarUl li{
+      display: block;
+      position: absolute;
+      top: -700px;
+    }
+  }
