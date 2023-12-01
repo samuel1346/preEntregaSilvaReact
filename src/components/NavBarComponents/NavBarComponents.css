@@ -27,7 +27,7 @@ a{
     transition: 300ms ease;
 }
 a:hover{
-    font-size: larger;
+    color: rgb(32, 44, 44);
 }
   
   @media(width<620px){

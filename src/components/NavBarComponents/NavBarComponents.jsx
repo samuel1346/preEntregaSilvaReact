@@ -4,10 +4,11 @@ import CartWidgetComponents from './CartWidgetComponents'
 import CountComponents from '../CountComponents/CountComponents'
 
 const NavBarComponents= ()=> {
+  
     return (
       <>
         <nav className='navBar'>
-          <a href="#"><h1>Cup coffy roasters</h1></a>
+          <h1><a href="#">Cup coffy roasters</a></h1>
           <ul className='navBarUl'>
             <li>
               <a href="#">cafes</a>

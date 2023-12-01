@@ -1,0 +1,15 @@
+.ItemListContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em;
+    width: 7rem;
+    height: 5rem;
+    font-size: larger;
+    font-style: italic;
+    border-radius: 20%;
+    transition: 300ms;
+}
+.ItemListContainer:hover{
+    background-color: rgb(91, 110, 103);
+}

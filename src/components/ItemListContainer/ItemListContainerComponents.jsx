@@ -1,8 +1,9 @@
+import './ItemListContainerComponent.css'
 
 const ItemListContainerComponents = ({greeting}) => {
     console.log({greeting})
   return (
-    <div>{greeting}</div>
+    <div className="ItemListContainer">{greeting}</div>
   )
 }
 
