@@ -1,13 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect} from "react"
+import axios from "axios"
 
 const CountComponents = () => {
+
+  
+
     const [count, setCount]= useState(0)
-    const handleAddCount = ()=>{
-        setCount(count++)
-    }
-    const handleRemoveCount= ()=>{
-        setCount(count--)
-    }
   return (
     <>{count}</>
   )

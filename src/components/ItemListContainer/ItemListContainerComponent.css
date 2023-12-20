@@ -1,15 +1,29 @@
-.ItemListContainer{
+.container{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2em;
-    width: 7rem;
-    height: 5rem;
-    font-size: larger;
-    font-style: italic;
-    border-radius: 20%;
-    transition: 300ms;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
-.ItemListContainer:hover{
-    background-color: rgb(91, 110, 103);
+.ItemListContainer{
+    margin: 2em;
+    transition: 500ms;
+    border: 3px solid rgb(91, 110, 103);
+    border-radius: 0% 0% 5% 0%;
+    background-color: rgb(91, 110, 103, 0.8);
+    width: fit-content;
+}
+img{
+    width: 12em;
+    height: 11em;
+    margin: 1em;
+    border-radius: 5%;
+    object-fit: contain;
+}
+.propsCard{
+    width: fit-content;
+    height: fit-content;
+    margin: 0em 0em 0em 1em;
+    font-weight: 600;
+}
+.propsCard p{
+    width: 10em;
 }

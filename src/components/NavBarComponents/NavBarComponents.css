@@ -14,7 +14,7 @@
     justify-content: space-between;
     margin: 5px 0px 5px 0px;
   }
-  .navBarUl li{
+  .navBarUl div{
     margin:  0px 15px 0px 0px;
     padding:  0px 5px 0px 5px;
   }
@@ -31,12 +31,53 @@ a:hover{
 }
   
   @media(width<620px){
+    nav{
+      transition: 500ms;
+    }
     .burgerBtn{
       z-index: auto;
+      transition: 500ms;
     }
-    .navBarUl li{
-      display: block;
+    .navBarUlList{
       position: absolute;
       top: -700px;
     }
+    .navBarUlDisplay{
+      display: inline;
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      transition: 500ms;
+      width: 50%;
+      height: 100%;
+      background-color: rgb(91, 110, 103, 0.8);
+    }
+    .navBarUlListDisplay{
+      align-items: center;
+      font-size: large;
+      font-weight: bold;
+      margin: 2rem;
+      position: sticky;
+    }
+  }
+
+  .categories{
+    position: absolute;
+    top: 2rem;
+    background-color: rgb(91, 110, 103, 0.8);
+    width: 15%;
+    margin: 1rem;
+    font-size: large;
+  }
+  .categoryDisplay{
+    position: absolute;
+    overflow-y: hidden;
+    height: 21px;
+    transition: 500ms;
+  }
+  .categoryDisplay:hover{
+    position: absolute;
+    overflow-y: hidden;
+    height: 50%;
+    background-color: rgb(91, 110, 103, 0.8);
   }
