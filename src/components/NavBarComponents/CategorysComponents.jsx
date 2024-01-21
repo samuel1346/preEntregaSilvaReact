@@ -1,19 +1,22 @@
 import './NavBarComponents.css'
-
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
-const CategorysComponents = ({categoryDisplay}) => {
+const CategorysComponents = ({categoryDisplay, handleDisplayCategories, displayCategories}) => {
+    const [catDisplaied, setCatDisplaied]= useState("categories")
+    
     return ( 
-        <div className='categoryDisplay'>
-            <p>categories</p>
+        <div onClick={handleDisplayCategories}
+            className={`${displayCategories?`categoryDisplay`:`categoryDisplayClicked`}`} >
+            <Link>{catDisplaied}</Link>
             {
                 categoryDisplay.map(finca =>{
                     return(
-                        <Link to={`/category/${finca.winery}`} >
-                            <div key={finca.id}>
+                        <div key={finca.id}>
+                            <Link to={`/category/${finca.winery}`} >
                                 {finca.winery}
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                     )
                 })
             }

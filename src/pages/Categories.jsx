@@ -1,23 +1,26 @@
-import { getProductCategory } from "../services"
+
 import { useState, useEffect} from "react"
 import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
+import {collection, getDocs,doc, getDoc, getFirestore, query, where} from "firebase/firestore"
 
 const Categories = () => {
     const [category, setCategory]= useState([])
     const {id}= useParams();
+    const [filteredCategory, setFilteredCategory] = useState([]);
 
-    useEffect(()=>{
-        getProductCategory(id)
-        .then(res=>{
-            console.log(res)
-            setCategory(res.data)
-        })
-        .catch(rej=>{console.log(rej)})
-    }, [id])
+    useEffect(() => {
+      const db = getFirestore();
+      const productCollection = collection(db, "products");
+      const q = query(productCollection, where("winery", "==", id));
+  
+      getDocs(q).then((snapshot) => {
+        setFilteredCategory(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      });
+    }, [id]); 
   return (
-    <div className='container'>{
-      category.map(i=>{
+    <div className='childContainer'>{
+      filteredCategory.map(i=>{
         return (
           
             <div key={i.id} className="ItemListContainer">

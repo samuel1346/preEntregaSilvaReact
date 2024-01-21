@@ -3,45 +3,40 @@ import './CartWidgetComponents'
 import CartWidgetComponents from './CartWidgetComponents'
 import CountComponents from '../CountComponents/CountComponents'
 import BurgerBtnComponents from './BurgerBtnComponents'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { TestContext } from '../../context/TestContext'
 import { Link } from 'react-router-dom'
 import FincasCategories from '../../pages/fincasCategories'
 
 const NavBarComponents= ()=> {
 
-  const [displayBar, setDisplayBar] = useState(true)
-  console.log(displayBar)
+  const [displayBar, setDisplayBar] = useState(true);
+  
+  const {count} = useContext(TestContext);
+  
   function handleDisplayBar(){
     setDisplayBar(!displayBar)
-  }
-  const [displayCategories, setDisplayCategories] = useState(true)
-  console.log(displayCategories)
-  function handleDisplayCategories(){
-    setDisplayCategories(!displayCategories)
   }
 
     return (
       <>
         <nav className='navBar'>
-          <h1><a href="#">Cup coffy roasters</a></h1>
+          <Link to='/'><h1>Wine for luxury</h1></Link>
           <div className={`${displayBar?`navBarUl`:`navBarUlDisplay`}`}id='navBarUl'>
             <div className={`${displayBar?`navBarUlList`:`navBarUlListDisplay`}`}>
-              <Link to="/">Home</Link>
+              <Link to="/Home">Home</Link>
             </div>
             <div className={`${displayBar?`navBarUlList`:`navBarUlListDisplay`}`}>
-              <a href="/BaristaTools">barista tools</a>
+              <CartWidgetComponents/>
             </div>
             <div className={`${displayBar?`navBarUlList`:`navBarUlListDisplay`}`}>
-              <CartWidgetComponents/><CountComponents/>
-            </div>
-            <div className={`${displayBar?`navBarUlList`:`navBarUlListDisplay`}`}>
-              <div>
-                <FincasCategories displayCategories = {displayCategories} handleDisplayCategories={handleDisplayCategories}/>
-              </div>
+              
+                <FincasCategories />
+              
             </div>
             </div>
             <section className='burgerBtn' id='burgerBtn'>
-              <a href="#"><BurgerBtnComponents displayBar = {displayBar} handleDisplayBar={handleDisplayBar}/></a>
+              <Link><BurgerBtnComponents displayBar = {displayBar} handleDisplayBar={handleDisplayBar}/></Link>
             </section>
         </nav>
       </>

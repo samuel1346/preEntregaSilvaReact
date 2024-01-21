@@ -1,0 +1,30 @@
+
+.CountComponents{
+    display: flex;
+    flex-direction: column;
+}
+.handleAdd{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.handleCart{
+    display: flex;
+    justify-content: center;
+}
+
+.btnCart button{
+    width: 30%;
+    margin: .3rem;
+    box-shadow: 2px 2px 2px 1px rgb(121, 122, 122);
+    background-color: rgb(140, 151, 151, 0.5);
+    border-radius: 0px 0px 5px 0;
+    font-weight: bold;
+}
+
+button:hover{
+    box-shadow: 2px 2px 5px 2px rgb(51, 53, 53);
+}
+
+

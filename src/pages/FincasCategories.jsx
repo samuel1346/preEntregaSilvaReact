@@ -1,19 +1,30 @@
 import CategorysComponents from "../components/NavBarComponents/CategorysComponents";
-import { useEffect, useState } from 'react'
+import { useEffect, useState} from 'react'
 import { getProductsCategorys } from "../services";
+import {collection, getDocs, getFirestore} from "firebase/firestore"
 
-const FincasCategories = ({handleDisplayCategories}) => {
+const FincasCategories = () => {
     const [categoryDisplay, setCategoryDisplay]= useState([])
 
+    const [displayCategories, setDisplayCategories] = useState(true)
+    
+    function handleDisplayCategories(){
+        setDisplayCategories(!displayCategories)
+    }
     useEffect(()=>{
-        getProductsCategorys()
-        .then(res=> setCategoryDisplay(res.data))
-        .catch(err=> console.log(err))
+        const db= getFirestore();
+        const productColections= collection(db,"products" );
+        getDocs(productColections).then((snapshot)=>{
+            setCategoryDisplay(snapshot.docs.map(doc=>({id:doc.id, ...doc.data()})))
+        })
     },[])
     return(
-        <div onClick={handleDisplayCategories}>
-        <CategorysComponents categoryDisplay={categoryDisplay}/>
-        </div>
+        
+            <CategorysComponents 
+            categoryDisplay={categoryDisplay}
+            displayCategories = {displayCategories} 
+            handleDisplayCategories={handleDisplayCategories}/>
+        
         
     )
   

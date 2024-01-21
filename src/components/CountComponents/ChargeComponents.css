@@ -1,0 +1,32 @@
+.ChargeComponents{
+    background-color: rgb(26, 25, 25);
+    height: 1000px;
+    overflow: hidden;
+}
+
+@keyframes loadingPage{
+    from{
+        transform: translate(350px, 500px) rotate(360deg);
+        background-color: rgb(94, 165, 226, 0.5);
+        box-shadow: 0px 0px 25px 8px rgb(182, 191, 199);
+    }
+
+    to{
+        transform: translate(0) rotate(0deg);
+        background-color: rgb(182, 191, 199);
+        box-shadow: 0px 0px 10px 5px rgb(182, 191, 199);
+    }
+}
+
+.childChargeComponents{
+    animation: loadingPage 2s infinite;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(182, 191, 199);
+    font-size: larger;
+    font-weight: bolder;
+    border-radius: 30%;
+}
+.loading{
+    padding: 15px;
+}

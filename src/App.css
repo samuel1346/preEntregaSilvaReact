@@ -2,13 +2,27 @@
   margin: 0;
   padding: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: rgb(26, 25, 25);
+  color: rgb(16, 73, 92);
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  font-weight: 500;
 }
 body{
-  background-color: rgb(211, 211, 211);
+  background-color: rgb(238, 245, 255);
 }
-
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
 

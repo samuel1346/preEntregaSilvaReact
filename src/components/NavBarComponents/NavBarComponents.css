@@ -3,11 +3,12 @@
     height: fit-content;
     display: flex;
     justify-content: space-around;
-    background-color: rgb(180, 180, 179);
-    transition: 300ms;
+    background-color: rgb(238, 245, 255);
+    border:double 3px  rgb(23, 107, 135, 0.5);
   }
   .navBar:hover{
-    background-color: rgb(91, 110, 103);
+    background-color: rgb(180, 212, 255);
+    box-shadow: 1rem .5rem 1rem .5rem rgb(140, 151, 151);
   }
   .navBarUl{
     display: flex;
@@ -16,27 +17,28 @@
   }
   .navBarUl div{
     margin:  0px 15px 0px 0px;
-    padding:  0px 5px 0px 5px;
   }
   .burgerBtn{
     color: rgb(26, 25, 25, 0);
     z-index: -1;
   }
 
-a{
-    transition: 300ms ease;
+
+.categoryDisplay{
+  position: absolute;
+  overflow: hidden;
+  height: 25px;
 }
-a:hover{
-    color: rgb(32, 44, 44);
+.categoryDisplayClicked{
+  position: absolute;
+  height: 100%;
+  width: 20vw;
+  background-color: rgb(180, 212, 255, 0.5);
 }
   
-  @media(width<620px){
-    nav{
-      transition: 500ms;
-    }
+  @media(width<600px){
     .burgerBtn{
       z-index: auto;
-      transition: 500ms;
     }
     .navBarUlList{
       position: absolute;
@@ -47,37 +49,27 @@ a:hover{
       position: fixed;
       left: 0px;
       top: 0px;
-      transition: 500ms;
       width: 50%;
       height: 100%;
-      background-color: rgb(91, 110, 103, 0.8);
+      background-color: rgb(180, 212, 255, 0.5);
     }
     .navBarUlListDisplay{
       align-items: center;
-      font-size: large;
-      font-weight: bold;
-      margin: 2rem;
+      margin: 1.5rem;
       position: sticky;
+      height: 25px;
+      width: 100%;
+    }
+
+    .categoryDisplay{
+      height: 25px;
+      width: 100%;
+
+    }
+    .categoryDisplayClicked{
+      position: static;
+      width: 100%;
+      height: 100%;
     }
   }
 
-  .categories{
-    position: absolute;
-    top: 2rem;
-    background-color: rgb(91, 110, 103, 0.8);
-    width: 15%;
-    margin: 1rem;
-    font-size: large;
-  }
-  .categoryDisplay{
-    position: absolute;
-    overflow-y: hidden;
-    height: 21px;
-    transition: 500ms;
-  }
-  .categoryDisplay:hover{
-    position: absolute;
-    overflow-y: hidden;
-    height: 50%;
-    background-color: rgb(91, 110, 103, 0.8);
-  }
